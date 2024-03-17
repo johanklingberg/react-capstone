@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logoImage from '../images/Logo.svg';
 import { styles } from '../styles';
 // React stylesheet
@@ -7,16 +8,16 @@ import { styles } from '../styles';
 function Nav() {
   return (
     <>
-    <div style={styles.navContainer}>
+    <div style={{ ...styles.navContainer, minWidth: '800px' }}>
       <img src={logoImage} alt="logo" style={styles.logoImage} />
       <nav style={styles.navBar}>
         <ul style={styles.navList}>
-          <li style={styles.navItem}><a href="#home" style={styles.navLink}>Home</a></li>
-          <li style={styles.navItem}><a href="#about" style={styles.navLink}>About</a></li>
-          <li style={styles.navItem}><a href="#menu" style={styles.navLink}>Menu</a></li>
-          <li style={styles.navItem}><a href="#reservations" style={styles.navLink}>Reservations</a></li>
-          <li style={styles.navItem}><a href="#order-online" style={styles.navLink}>Order online</a></li>
-          <li style={styles.navItem}><a href="#login" style={styles.navLink}>Login</a></li>
+          <li style={styles.navItem}><Link to="/" style={styles.navLink}>Home</Link></li>
+          <li style={styles.navItem}><Link to="/about" style={styles.navLink}>About</Link></li>
+          <li style={styles.navItem}><Link to="/menu" style={styles.navLink}>Menu</Link></li>
+          <li style={styles.navItem}><Link to="/booking" style={styles.navLink}>Reservations</Link></li>
+          <li style={styles.navItem}><Link to="/order-online" style={styles.navLink}>Order online</Link></li>
+          <li style={styles.navItem}><Link to="/login" style={styles.navLink}>Login</Link></li>
         </ul>
       </nav>
     </div>

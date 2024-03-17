@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from './Nav';
 import Special from './Special';
 import Testimonials from './Testimonials';
 import About from './About';
@@ -11,7 +10,7 @@ function Main() {
   return (
     <main>
 
-      <Nav />
+      
       
       <section style={styles.mainSection}>
       <div>
