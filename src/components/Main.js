@@ -1,40 +1,27 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import Homepage from '../Homepage';
 import BookingPage from '../BookingPage';
-import { Route, Routes } from 'react-router-dom';
-import restaurantImage from '../images/restaurantfood.png';
-import { styles } from '../styles';
-import { initializeTimes, timesReducer, updateTimes } from './timeReducer';
-
-// function initializeTimes() {
-//   return ([...Array(6).keys()].map(i => `${17 + i}:00`));
-// }
-
-// function updateTimes() {
-//   return initializeTimes();
-// }
-
-// const timesReducer = (state, action) => {
-//   switch (action.type) {
-//     case 'update':      
-//     console.log ("update: ", action.payload);
-//       return updateTimes();
-//     default:
-//       throw new Error();
-//   }
-// };
+import ConfirmedBookingPage from '../ConfirmedBookingPage';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import { initializeTimes, timesReducer } from './timeReducer';
+import { submitAPI } from '../utils/FakeAPI';
 
 function Main() {
   const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   initializeTimes();
-  // }, []);
+  const submitForm = async (formData) => {
+    const result = await submitAPI(formData);
+    if (result) {
+      navigate('/confirmed');
+    }
+  };
 
   return (
     <main>
     <Routes>
-          <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} />
+          <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
+          <Route path="/confirmed" element={<ConfirmedBookingPage />} />
           <Route path="/" element={<Homepage />} />
     </Routes>
     </main>

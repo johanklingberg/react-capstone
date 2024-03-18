@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styles } from '../styles';
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [date, setDate] = useState(() => {
       const today = new Date();
       const yyyy = today.getFullYear();
@@ -48,6 +48,8 @@ function BookingForm({ availableTimes, dispatch }) {
         return;
       }
       const reservation = { date, time, guests, occasion };
+
+      submitForm(reservation);
       console.log('Reservation submitted:', reservation);
       // Here you would typically send the reservation to your server
     };
