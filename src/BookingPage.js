@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BookingForm from './components/BookingForm';
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch }) {
+
   return (
     <div>
-      <h1>Booking Page</h1>
-      {/* Additional content here */}
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
     </div>
   );
 }

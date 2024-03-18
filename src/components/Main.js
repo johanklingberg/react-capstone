@@ -1,45 +1,37 @@
-import React from 'react';
-import Special from './Special';
-import Testimonials from './Testimonials';
-import About from './About';
+import React, { useState, useEffect, useReducer } from 'react';
+import Homepage from '../Homepage';
+import BookingPage from '../BookingPage';
+import { Route, Routes } from 'react-router-dom';
 import restaurantImage from '../images/restaurantfood.png';
 import { styles } from '../styles';
 
+function initializeTimes() {
+  return ([...Array(6).keys()].map(i => `${17 + i}:00`));
+}
+
+const timesReducer = (state, action) => {
+  switch (action.type) {
+    case 'update':      
+    console.log ("update: ", action.payload);
+      return initializeTimes();
+    default:
+      throw new Error();
+  }
+};
 
 function Main() {
+  const [availableTimes, dispatch] = useReducer(timesReducer, [], initializeTimes);
+
+  // useEffect(() => {
+  //   initializeTimes();
+  // }, []);
+
   return (
     <main>
-
-      
-      
-      <section style={styles.mainSection}>
-      <div>
-        <h1 style={styles.title}>Little Lemon</h1>
-        <h2 style={styles.subTitle}>Chicago</h2>
-        <p style={styles.description}>
-          We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
-        </p>
-        <button style={styles.button}>
-          Reserve a Table
-        </button>
-      </div>
-      <div style={styles.imageContainer}>
-        <img src={restaurantImage} alt="Restaurant Interior" style={styles.image} />
-      </div>
-    </section>
-    <section style={styles.specialsSection}>
-      <div style={styles.specialsHeader}>
-        <h1 style={styles.specialsTitle}>This week's specials!</h1>
-        <button style={styles.specialsButton}>
-          Online Menu
-        </button>
-      </div>
-      <Special dish="Greek Salad" />
-      <Special dish="Bruchetta" />
-      <Special dish="Lemon Dessert" />
-    </section>
-    <Testimonials />
-    <About />      
+    <Routes>
+          <Route path="/booking" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} />
+          <Route path="/" element={<Homepage />} />
+    </Routes>
     </main>
   );
 }

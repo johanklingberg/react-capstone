@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import Specials from './components/Specials';
+import Testimonials from './components/Testimonials';
+import About from './components/About';
+import Hero from './components/Hero';
 
 
 function Homepage() {
@@ -12,8 +14,13 @@ function Homepage() {
       <div style={{ backgroundColor: '#FFFFFF' }}>
 
         <Header />
-        <Main />
-        <Footer />
+        {/* <Main /> */}
+        <Hero /> 
+      
+      <Specials />
+      
+      <Testimonials />
+      <About />      
       </div>
     // </div>
   );
