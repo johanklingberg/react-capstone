@@ -64,8 +64,8 @@ function BookingForm({ availableTimes, dispatch }) {
         
         <label id="timeLabel">
           Time: <span style={{color: 'red'}}>*</span>
-        </label>
-        <select name="time" value={time} onChange={handleInputChange} required aria-required="true" aria-labelledby="timeLabel" aria-label="Time">
+        </label>        
+        <select name="time" role="combobox" value={time} onChange={handleInputChange} required aria-required="true" aria-labelledby="timeLabel" aria-label="Time" data-testid="TimeCombo">
           <option value="">Select a time</option>
           {availableTimes.map((time, index) => (
             <option key={index} value={time}>{time}</option>
