@@ -18,7 +18,7 @@ const localStyles = {
 
 function About() {
   return (
-    <div style={localStyles.aboutContainer}>
+    <section style={localStyles.aboutContainer}>
       <div>
         <h1 style={styles.titleBlack}>Little Lemon</h1>
         <h2 style={styles.subTitleBlack}>Chicago</h2>
@@ -27,7 +27,7 @@ function About() {
       <div>
         <img src={require('../images/about.png')} alt="About Us" style={localStyles.aboutImage} />
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -11,7 +11,7 @@ function Hero() {
         <p style={styles.description}>
           We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
         </p>
-        <button style={styles.button}>
+        <button style={styles.button} aria-label="On Click">
           Reserve a Table
         </button>
       </div>

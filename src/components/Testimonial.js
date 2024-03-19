@@ -30,7 +30,7 @@ function Testimonial({ id }) {
     <img key={index} src={imageStar} alt="star" style={{ width: '20px', height: '20px', marginRight: '5px' }} />
   ));
   return (
-    <div style={{ backgroundColor: 'white', padding: '20px', textAlign: 'left' }}>
+    <article style={{ backgroundColor: 'white', padding: '20px', textAlign: 'left' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '10px', fontWeight: 'bold' }}>
         Rating: {stars}
       </div>
@@ -39,7 +39,7 @@ function Testimonial({ id }) {
         <span style={{ fontWeight: 'bold' }}>{name}</span>
       </div>
       <div style={{ fontSize: '0.9em' }}>{review}</div>
-    </div>
+    </article>
   );
 }
 export default Testimonial;

@@ -4,9 +4,9 @@ import BookingForm from './components/BookingForm';
 function BookingPage({ availableTimes, dispatch, submitForm }) {
 
   return (
-    <div>
+    <section>
       <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
-    </div>
+    </section>
   );
 }
 

@@ -7,7 +7,7 @@ function Specials() {
     <section style={{padding: '20px', backgroundColor: '#ffffff', display: 'grid', gridTemplateColumns: '1fr 20px 1fr 20px 1fr', gridTemplateRows: 'auto auto', gridColumnGap: '20px'}}>
       <div style={{textAlign: 'center', marginBottom: 20, gridColumn: '1 / -1'}}>
         <h1>This week's specials!</h1>
-        <button style={{padding: '10px 20px', backgroundColor: '#ffcc00', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>
+        <button style={styles.button} aria-label="On Click">
           Online Menu
         </button>
         

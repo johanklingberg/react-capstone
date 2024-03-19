@@ -30,7 +30,7 @@ function Special({ dish }) {
  // alert(imageName);
   return (
     selectedDish ? (
-      <div style={{ borderRadius: '10px 10px 0 0', backgroundColor: '#EDEFEE', minHeight:'450px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <article style={{ borderRadius: '10px 10px 0 0', backgroundColor: '#EDEFEE', minHeight:'450px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         
         <div>
           <img src={imageName} alt={selectedDish.Name} style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', border: '1px solid black', borderRadius: '10px 10px 0 0', margin: '0' }} />
@@ -41,7 +41,7 @@ function Special({ dish }) {
           <p style={{ margin: '0 20px 20px 20px' }}>{selectedDish.Description}</p>
         </div>
         <a href="#" style={{ fontWeight: 'bold', display: 'block', padding: '20px', color: 'black', textDecoration: 'none', textAlign: 'left' }}>Order a delivery</a>
-      </div>
+      </article>
     ) : (
       <div style={{ backgroundColor: '#EDEFEE', padding: '20px' }}>No dish selected</div>
     )
